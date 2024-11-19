@@ -10,15 +10,15 @@ List<CategoryModel> myCategories = [
     name: 'Ramen',
   ),
   CategoryModel(
-    image: 'assets/food-delivery(foodel)/burger.png',
+    image: 'assets/burger/cheese-burger.png',
     name: 'Burger',
   ),
   CategoryModel(
-    image: 'assets/food-delivery(foodel)/salad.png',
+    image: 'assets/salad.png',
     name: 'Salad',
   ),
   CategoryModel(
-    image: 'assets/food-delivery(foodel)/pancake.png',
+    image: 'assets/berry-bonanza-waffle.png',
     name: 'Waffle',
   ),
 ];
