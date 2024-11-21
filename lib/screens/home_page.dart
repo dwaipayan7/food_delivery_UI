@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Model/category_model.dart';
 import 'package:food_delivery/consts.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,8 +12,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    int selectedIndex = 0;
+
     return SafeArea(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -84,6 +88,7 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.topCenter,
                   children: [
                     Container(
+                      margin: EdgeInsets.symmetric(vertical: 15),
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black),
@@ -95,27 +100,137 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Positioned(
+                        right: 0,
+                        top: 0,
                         child: GestureDetector(
                           child: Container(
                             padding: EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: Color(0xfff95f60),
-                              shape: BoxShape.circle
-                            ),
+                                color: Color(0xfff95f60),
+                                shape: BoxShape.circle),
                             child: Text(
                               "0",
-                              style: TextStyle(
-                                color: Colors.white
-                              ),
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
-                        )
-                    )
+                        ))
                   ],
                 ),
               ],
             ),
           ),
+          const SizedBox(
+            height: 35,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            child: Text(
+              "Let's finds the best food around you",
+              style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: -.5),
+            ),
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  "Find by Category",
+                  style: TextStyle(
+                      fontSize: 22, fontWeight: FontWeight.w600, color: kblack),
+                ),
+                Text(
+                  "See All",
+                  style: TextStyle(color: Colors.orange),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ...List.generate(
+                    myCategories.length,
+                    (index) => GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedIndex = index;
+                            });
+                          },
+                          child: Container(
+                            height: 105,
+                            width: 88,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                border: selectedIndex == index
+                                    ? Border.all(width: 2.5, color: korange)
+                                    : Border.all(color: Colors.white)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Stack(
+                                  alignment: AlignmentDirectional.center,
+                                  children: [
+                                    Container(
+                                      height: 30,
+                                      width: 45,
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: kblack.withOpacity(0.4),
+                                                offset: Offset(0, 10),
+                                                blurRadius: 12,
+                                                spreadRadius: 5)
+                                          ]),
+                                    ),
+                                    Image.asset(
+                                      myCategories[index].image,
+                                      width: 60,
+                                      fit: BoxFit.cover,
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  myCategories[index].name,
+                                  style: TextStyle(
+                                      color: kblack,
+                                      fontWeight: FontWeight.w600),
+                                )
+                              ],
+                            ),
+                          ),
+                        ))
+              ],
+            ),
+          ),
+          SizedBox(height: 25,),
+          Padding(
+              padding: EdgeInsets.only(left: 15),
+            child: Text("Result (${""})",
+            style: TextStyle(
+              color: kblack.withOpacity(0.6),
+              fontWeight: FontWeight.bold,
+              letterSpacing: -.2
+            ),
+            ),
+          )
         ],
       ),
     );
