@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Model/onboard_model.dart';
+import 'package:food_delivery/screens/main_page.dart';
 
 import '../consts.dart';
 
@@ -108,7 +109,10 @@ class _AppOnboardingPageState extends State<AppOnboardingPage> {
                 child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: MaterialButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_)=> MainPage()));
+                      },
                     color: korange,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
