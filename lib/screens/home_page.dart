@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Model/category_model.dart';
+import 'package:food_delivery/Model/product_model.dart';
 import 'package:food_delivery/consts.dart';
+import 'package:food_delivery/widget/food_products_items.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -104,11 +106,11 @@ class _HomePageState extends State<HomePage> {
                         top: 0,
                         child: GestureDetector(
                           child: Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
+                            padding: const EdgeInsets.all(8),
+                            decoration: const BoxDecoration(
                                 color: Color(0xfff95f60),
                                 shape: BoxShape.circle),
-                            child: Text(
+                            child: const Text(
                               "0",
                               style: TextStyle(color: Colors.white),
                             ),
@@ -153,11 +155,11 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -204,12 +206,12 @@ class _HomePageState extends State<HomePage> {
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Text(
                                   myCategories[index].name,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: kblack,
                                       fontWeight: FontWeight.w600),
                                 )
@@ -220,17 +222,40 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          SizedBox(height: 25,),
+          const SizedBox(height: 25,),
           Padding(
-              padding: EdgeInsets.only(left: 15),
-            child: Text("Result (${""})",
-            style: TextStyle(
-              color: kblack.withOpacity(0.6),
-              fontWeight: FontWeight.bold,
-              letterSpacing: -.2
+              padding: const EdgeInsets.only(left: 15),
+            child: Center(
+              child: Text("Result (${"Item Products"})",
+              style: TextStyle(
+                color: kblack.withOpacity(0.6),
+                fontWeight: FontWeight.bold,
+                letterSpacing: -.2
+              ),
+              ),
             ),
+          ),
+          const SizedBox(height: 20,),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: BouncingScrollPhysics(),
+            child: Row(
+              children: [
+                ...List.generate(
+                    myProductModel.length,
+                    (index) => Padding(
+                        padding: index == 0 ?
+                            EdgeInsets.only(left: 25, right: 25)
+                            : EdgeInsets.only(right: 25),
+                      child: FoodProductsItems(
+                          myProductModel: myProductModel[index]
+                      ),
+                    )
+                )
+              ],
             ),
           )
+
         ],
       ),
     );

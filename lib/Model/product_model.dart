@@ -14,7 +14,7 @@ class MyProductModel {
 
 List<MyProductModel> myProductModel = [
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/ramen/sapporo_miso_ramen.png',
+    image: 'assets/ramen/shrimp_fried_rice.png',
     name: 'Sapporo Miso',
     price: 3.9,
     rate: 5,
@@ -22,7 +22,7 @@ List<MyProductModel> myProductModel = [
     category: "Ramen",
   ),
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/ramen/kurume_ramen.png',
+    image: 'assets/ramen/kurume_ramen.png',
     name: 'Kurume Ramen',
     price: 4.3,
     rate: 4.9,
@@ -30,7 +30,7 @@ List<MyProductModel> myProductModel = [
     category: "Ramen",
   ),
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/ramen/hakata_ramen.png',
+    image: 'assets/ramen/sapporo_miso_ramen.png',
     name: 'Hakata Ramen',
     price: 3.9,
     distance: 400,
@@ -38,7 +38,7 @@ List<MyProductModel> myProductModel = [
     category: "Ramen",
   ),
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/ramen/shrimp_fried_rice.png',
+    image: 'assets/ramen/hakata_ramen.png',
     name: 'Shrimp Fried Rice',
     price: 4.9,
     distance: 800,
@@ -46,7 +46,7 @@ List<MyProductModel> myProductModel = [
     category: "Ramen",
   ),
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/ramen/fullset_ramen.png',
+    image: 'assets/ramen/fullset_ramen.png',
     name: 'Fullset Ramen',
     price: 5.9,
     distance: 400,
@@ -55,15 +55,15 @@ List<MyProductModel> myProductModel = [
   ),
   //for burger
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/burger/grilled-beef-burger.png',
-    name: 'Grilled beef burger',
+    image: 'assets/burger/fried-chicken-burger.png',
+    name: 'Grilled burger',
     price: 33.5,
     distance: 150,
     rate: 5.0,
     category: "Burger",
   ),
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/burger/fried-chicken-burger.png',
+    image: 'assets/burger/fried-chicken-burger.png',
     name: 'Fried Chicken Burger',
     price: 23.0,
     distance: 150,
@@ -71,7 +71,7 @@ List<MyProductModel> myProductModel = [
     category: "Burger",
   ),
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/burger/cheese-burger.png',
+    image: 'assets/burger/cheese-burger.png',
     name: 'Cheese Burger',
     price: 40.5,
     distance: 100,
@@ -79,7 +79,7 @@ List<MyProductModel> myProductModel = [
     category: "Burger",
   ),
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/burger/beef-burger.png',
+    image: 'assets/burger/cheese-burger.png',
     name: 'Beef-Burger',
     price: 18.5,
     distance: 200,
@@ -88,7 +88,7 @@ List<MyProductModel> myProductModel = [
   ),
   // for salad
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/veg-salad.png',
+    image: 'assets/salad.png',
     name: 'Veg Salad',
     price: 7.0,
     distance: 300,
@@ -96,7 +96,7 @@ List<MyProductModel> myProductModel = [
     category: "Salad",
   ),
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/mix-salad.png',
+    image: 'assets/veg-salad.png',
     name: 'Mix Salad',
     price: 10.0,
     distance: 350,
@@ -105,7 +105,7 @@ List<MyProductModel> myProductModel = [
   ),
   // for waffle
   MyProductModel(
-    image: 'assets/food-delivery(foodel)/berry-bonanza-waffle.png',
+    image: 'assets/berry-bonanza-waffle.png',
     name: 'Berry Bonanza Waffle',
     price: 10.0,
     distance: 500,
