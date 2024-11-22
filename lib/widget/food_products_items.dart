@@ -120,7 +120,10 @@ class FoodProductsItems extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(child: GestureDetector(
+        Positioned(
+            bottom: 0,
+            right: 0,
+            child: GestureDetector(
           onTap: (){},
           child: Container(
             padding: EdgeInsets.all(12),
@@ -130,6 +133,9 @@ class FoodProductsItems extends StatelessWidget {
                 topLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10)
               )
+            ),
+            child: Icon(Icons.shopping_cart_outlined, color: Colors.white,
+            size: 25,
             ),
           ),
         ))
